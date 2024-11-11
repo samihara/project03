@@ -1,0 +1,41 @@
+<script id="start-template" type="text/x-handlebars-template">
+    <div>
+      <h2>Welcome to the Quiz</h2>
+      <input type="text" id="username" placeholder="Enter your name">
+      <select id="quiz-select">
+        <option value="1">Quiz 1</option>
+        <option value="2">Quiz 2</option>
+      </select>
+      <button id="start-quiz-btn">Start Quiz</button>
+    </div>
+  </script>
+  
+  <script id="question-template" type="text/x-handlebars-template">
+    <div>
+      <h3>Question {{index}}: {{question.text}}</h3>
+      {{#each question.options}}
+        <label><input type="radio" name="answer" value="{{this}}"> {{this}}</label>
+      {{/each}}
+      <button class="answer-btn">Submit</button>
+    </div>
+  </script>
+  
+  <script id="feedback-template" type="text/x-handlebars-template">
+    <div id="feedback">
+      <p>{{message}}</p>
+    </div>
+  </script>
+  
+  <script id="result-template" type="text/x-handlebars-template">
+    <div>
+      <h2>Results</h2>
+      <p>{{userName}}, you scored {{score}} out of {{totalQuestions}} in {{timeElapsed}} seconds.</p>
+      {{#if pass}}
+        <p>Congratulations, you passed!</p>
+      {{else}}
+        <p>Sorry, you did not pass.</p>
+      {{/if}}
+      <button id="retry-btn">Retry</button>
+    </div>
+  </script>
+  

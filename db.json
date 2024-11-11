@@ -1,0 +1,76 @@
+{
+    "quizzes": [
+      {
+        "id": 1,
+        "title": "Computer Science History",
+        "questions": [
+          {
+            "type": "multiple-choice",
+            "question": "Who is known as the father of computer science?",
+            "options": ["Alan Turing", "John von Neumann", "Ada Lovelace", "Charles Babbage"],
+            "answer": "Alan Turing"
+          },
+          {
+            "type": "text-response",
+            "question": "In what year was the World Wide Web invented?",
+            "answer": "1989"
+          },
+          {
+            "type": "image-choice",
+            "question": "Which image represents the ENIAC computer?",
+            "imageOptions": ["/images/eniac.png", "/images/modern-computer.png"],
+            "answer": "/images/eniac.png"
+          },
+
+          {
+            "type": "text-response",
+            "question": "What year was Java created?",
+            "answer": "1995"
+          }
+          
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Guess that Programming Language",
+        "questions": [
+          {
+            "type": "multiple-choice",
+            "question": "Which language is known for its simplicity and readability?",
+            "options": ["Python", "C++", "Java", "Rust"],
+            "answer": "Python"
+          },
+
+          {
+            "type": "multiple-choice",
+            "question": "Which programming language uses the '.class' file extension?",
+            "options": ["Python", "Java", "C#", "JavaScript"],
+            "answer": "Java"
+          },
+
+          {
+            "type": "narrative",
+            "question": "Name a language that is primarily used for statistical analysis and data science.",
+            "text_response": "R"
+          },
+
+          {
+            "type": "image",
+            "question": "Identify the programming language based on this logo.",
+            "image_url": "path/to/java-logo.png",
+            "options": ["Python", "Ruby", "Java", "Swift"],
+            "answer": "Java"
+          },
+
+          {
+            "type": "multiple-choice",
+            "question": "Which programming language is widely used for developing iOS apps?",
+            "options": ["Java", "Kotlin", "Swift", "JavaScript"],
+            "answer": "Swift"
+          }
+          
+        ]
+      }
+    ]
+  }
+  
