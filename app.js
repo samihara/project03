@@ -16,15 +16,37 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     function loadTemplate(templateId, data = {}) {
-      const templateSource = document.getElementById(templateId).innerHTML;
-      const template = Handlebars.compile(templateSource);
-      app.innerHTML = template(data);
-    }
+        const templateSource = document.getElementById(templateId);
+        if (templateSource) {
+          const template = Handlebars.compile(templateSource.innerHTML);
+          app.innerHTML = template(data);
+      
+          // Attach event listener for "Return to Main Menu" button if it exists
+          const returnHomeButton = document.getElementById("return-home-button");
+          if (returnHomeButton) {
+            returnHomeButton.addEventListener("click", loadHome);
+          }
+          
+          console.log(`Template "${templateId}" rendered successfully`);
+        } else {
+          console.error(`Template with ID "${templateId}" not found.`);
+        }
+      }
+      
+      
   
-    function loadHome() {
-      clearInterval(timerInterval); // Stop the timer if returning to the home screen
-      loadTemplate("home-template");
-    }
+      function loadHome() {
+        // Reset quiz data and state
+        quizData = {};
+        score = 0;
+        questionNumber = 0;
+      
+        // Stop the timer if it’s still running
+        if (timerInterval) clearInterval(timerInterval);
+      
+        // Load the home template
+        loadTemplate("home-template");
+      }
   
     window.loadQuiz = async (quizId) => {
       const response = await fetch(`https://my-json-server.typicode.com/samihara/project03/quizzes/${quizId}`);
@@ -50,28 +72,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     window.checkAnswer = (answer) => {
-      const correctAnswer = quizData.questions[questionNumber].answer;
-      const explanation = quizData.questions[questionNumber].explanation;
-      const feedback = document.getElementById("feedback");
-  
-      if (answer.trim().toLowerCase() === correctAnswer.trim().toLowerCase()) {
-        feedback.textContent = "Correct!";
-        score++;
-        setTimeout(() => {
-          questionNumber++;
-          loadNextQuestion();
-        }, 1000);
-      } else {
-        feedback.innerHTML = `Incorrect. The correct answer is: ${correctAnswer}. ${explanation} <button id="got-it-button">Got it</button>`;
-        
-        // Add event listener for the "Got it" button
-        const gotItButton = document.getElementById("got-it-button");
-        gotItButton.addEventListener("click", () => {
-          questionNumber++;
-          loadNextQuestion();
-        });
-      }
-    };
+        const currentQuestion = quizData.questions[questionNumber];
+        const correctAnswer = currentQuestion.answer;
+        const explanation = currentQuestion.explanation;
+        const feedback = document.getElementById("feedback");
+      
+        if (answer.trim().toLowerCase() === correctAnswer.trim().toLowerCase()) {
+          feedback.textContent = "Correct!";
+          score++;
+          setTimeout(() => {
+            questionNumber++;
+            loadNextQuestion();
+          }, 1000);
+        } else {
+          feedback.innerHTML = `Incorrect. The correct answer is: ${correctAnswer}. ${explanation}`;
+          // Add "Got it" button for user to acknowledge the explanation
+          feedback.innerHTML += ` <button id="got-it-button">Got it</button>`;
+          
+          // Add event listener for the "Got it" button
+          const gotItButton = document.getElementById("got-it-button");
+          gotItButton.addEventListener("click", () => {
+            questionNumber++;
+            loadNextQuestion();
+          });
+        }
+      };
+      
   
     function endQuiz() {
       const pass = (score / quizData.questions.length) * 100 >= 80;

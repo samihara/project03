@@ -8,24 +8,28 @@
             "type": "multiple-choice",
             "question": "Who is known as the father of computer science?",
             "options": ["Alan Turing", "John von Neumann", "Ada Lovelace", "Charles Babbage"],
-            "answer": "Alan Turing"
+            "answer": "Alan Turing",
+            "explanation": "Alan Turing is considered the father of computer science for his work in breaking the German Enigma code and laying the foundation of modern computing."
           },
           {
             "type": "text-response",
             "question": "In what year was the World Wide Web invented?",
-            "answer": "1989"
+            "answer": "1989",
+            "explanation": "The World Wide Web was invented by Tim Berners-Lee in 1989 while working at CERN."
           },
           {
             "type": "image-choice",
             "question": "Which image represents the ENIAC computer?",
             "imageOptions": ["/images/eniac.png", "/images/modern-computer.png"],
-            "answer": "/images/eniac.png"
+            "answer": "/images/eniac.png",
+            "explanation": "The ENIAC computer, one of the first general-purpose computers, was developed in the 1940s and was notably larger than modern computers."
           },
 
           {
             "type": "text-response",
             "question": "What year was Java created?",
-            "answer": "1995"
+            "answer": "1995",
+            "explanation": "Java was officially released in 1995 by Sun Microsystems."
           }
           
         ]
@@ -38,20 +42,23 @@
             "type": "multiple-choice",
             "question": "Which language is known for its simplicity and readability?",
             "options": ["Python", "C++", "Java", "Rust"],
-            "answer": "Python"
+            "answer": "Python",
+            "explanation": "Python is known for its easy-to-read syntax, making it a popular choice for beginners and experienced developers alike."
           },
 
           {
             "type": "multiple-choice",
             "question": "Which programming language uses the '.class' file extension?",
             "options": ["Python", "Java", "C#", "JavaScript"],
-            "answer": "Java"
+            "answer": "Java",
+            "explanation": "Java compiles code into bytecode, which is stored in .class files that can be run on any machine with a Java Virtual Machine (JVM)."
           },
 
           {
-            "type": "narrative",
+            "type": "text-response",
             "question": "Name a language that is primarily used for statistical analysis and data science.",
-            "text_response": "R"
+            "answer": "R",
+            "explanation": "R is widely used in data science for statistical analysis, data visualization, and machine learning."
           },
 
           {
@@ -59,14 +66,16 @@
             "question": "Identify the programming language based on this logo.",
             "image_url": "path/to/java-logo.png",
             "options": ["Python", "Ruby", "Java", "Swift"],
-            "answer": "Java"
+            "answer": "Java",
+            "explanation": "The Java logo is distinctive and widely recognized by developers globally."
           },
 
           {
             "type": "multiple-choice",
             "question": "Which programming language is widely used for developing iOS apps?",
             "options": ["Java", "Kotlin", "Swift", "JavaScript"],
-            "answer": "Swift"
+            "answer": "Swift",
+            "explanation": "Swift is Apple's preferred language for iOS development due to its performance and safety features."
           }
           
         ]
