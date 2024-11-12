@@ -3,9 +3,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     font-family: 'Arial', sans-serif;
     background-color: #f5f5dc; /* Beige background */
     color: #333;
@@ -14,37 +14,44 @@
     align-items: center;
     height: 100vh;
     text-align: center;
-  }
-  
-  #app {
+}
+
+#app {
     max-width: 800px;
     width: 100%;
     padding: 20px;
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
+}
+
+h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #4CAF50;
     font-size: 36px;
     margin-bottom: 20px;
-  }
-  
-  h2 {
+}
+
+h2 {
     font-size: 24px;
     color: #333;
     margin-bottom: 20px;
-  }
-  
-  p {
+}
+
+p {
     font-size: 18px;
     color: #666;
-  }
-  
-  /* Buttons */
-  button {
+}
+
+/* Timer Styling */
+#timer {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+button {
     background-color: #4CAF50;
     color: white;
     font-size: 18px;
@@ -54,85 +61,111 @@
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background-color: #45a049;
     transform: scale(1.05);
-  }
-  
-  button:active {
+}
+
+button:active {
     transform: scale(1);
-  }
-  
-  /* Quiz Question Styling */
-  .quiz-question {
+}
+
+/* Quiz Question Styling */
+.quiz-question {
     background-color: #e8f5e9;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
-  }
-  
-  .quiz-question p {
+}
+
+.quiz-question p {
     font-size: 20px;
     color: #333;
-  }
-  
-  .quiz-feedback {
+}
+
+.quiz-feedback {
     font-size: 18px;
     color: #d32f2f;
     margin-top: 10px;
-  }
-  
-  button#next-button {
+}
+
+/* Styling for the Next Question Button */
+button#next-button {
     background-color: #2196F3;
     margin-top: 15px;
-  }
-  
-  button#next-button:hover {
+}
+
+button#next-button:hover {
     background-color: #1976D2;
-  }
-  
-  .quiz-end {
+}
+
+/* End of Quiz Styling */
+.quiz-end {
     background-color: #f1f8e9;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Centering everything */
-  .container {
+}
+
+/* Feedback and "Got it" Button Styling */
+.feedback-text {
+    font-size: 18px;
+    color: #d32f2f;
+    margin-bottom: 10px;
+}
+
+.got-it-button-container {
+    margin-top: 15px;
+    text-align: center;
+}
+
+button#got-it-button {
+    background-color: #FFC107;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button#got-it-button:hover {
+    background-color: #FFB300;
+}
+
+/* Container Centering */
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  
-  /* Styling for "Got it" button in case of wrong answer */
-  button#got-it-button {
-    background-color: #FFC107;
-  }
-  
-  button#got-it-button:hover {
-    background-color: #FFB300;
-  }
-  
-  /* Animations for feedback */
-  @keyframes fade-in {
+}
+
+/* Animations for Feedback */
+@keyframes fade-in {
     from {
-      opacity: 0;
+        opacity: 0;
     }
     to {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-  
-  .feedback {
+}
+
+.feedback {
     animation: fade-in 1s ease;
-  }
-  
-  #timer {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
+}
+.image-options img {
+    width: 150px;
+    height: auto;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.image-options img:hover {
+    transform: scale(1.1);
+}

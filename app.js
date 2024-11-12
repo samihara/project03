@@ -72,31 +72,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     window.checkAnswer = (answer) => {
-        const currentQuestion = quizData.questions[questionNumber];
-        const correctAnswer = currentQuestion.answer;
-        const explanation = currentQuestion.explanation;
+        const correctAnswer = quizData.questions[questionNumber].answer;
+        const explanation = quizData.questions[questionNumber].explanation || "No additional explanation provided.";
         const feedback = document.getElementById("feedback");
       
         if (answer.trim().toLowerCase() === correctAnswer.trim().toLowerCase()) {
-          feedback.textContent = "Correct!";
+          feedback.innerHTML = "Correct!";
           score++;
           setTimeout(() => {
             questionNumber++;
             loadNextQuestion();
           }, 1000);
         } else {
-          feedback.innerHTML = `Incorrect. The correct answer is: ${correctAnswer}. ${explanation}`;
-          // Add "Got it" button for user to acknowledge the explanation
-          feedback.innerHTML += ` <button id="got-it-button">Got it</button>`;
-          
+          feedback.innerHTML = `
+            <p class="feedback-text">Incorrect. The correct answer is: ${correctAnswer}.<br>${explanation}</p>
+            <div class="got-it-button-container">
+              <button id="got-it-button">Got it</button>
+            </div>
+          `;
+      
           // Add event listener for the "Got it" button
-          const gotItButton = document.getElementById("got-it-button");
-          gotItButton.addEventListener("click", () => {
+          document.getElementById("got-it-button").addEventListener("click", () => {
             questionNumber++;
             loadNextQuestion();
           });
         }
-      };
+      };      
       
   
     function endQuiz() {

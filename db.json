@@ -20,8 +20,11 @@
           {
             "type": "image-choice",
             "question": "Which image represents the ENIAC computer?",
-            "imageOptions": ["/images/eniac.png", "/images/modern-computer.png"],
-            "answer": "/images/eniac.png",
+            "imageOptions": [
+                "https://raw.githubusercontent.com/samihara/project03/main/eniac.jpg",
+                "https://raw.githubusercontent.com/samihara/project03/main/moderncomputer.png"
+            ],
+            "answer": "eniac.jpg",
             "explanation": "The ENIAC computer, one of the first general-purpose computers, was developed in the 1940s and was notably larger than modern computers."
           },
 
@@ -64,7 +67,7 @@
           {
             "type": "image",
             "question": "Identify the programming language based on this logo.",
-            "image_url": "path/to/java-logo.png",
+            "image_url": "https://raw.githubusercontent.com/samihara/project03/main/java.png",
             "options": ["Python", "Ruby", "Java", "Swift"],
             "answer": "Java",
             "explanation": "The Java logo is distinctive and widely recognized by developers globally."
