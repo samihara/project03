@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let questionNumber = 0;
     let startTime;
     let timerInterval;
+    
   
     // Helper function to start the timer
     function startTimer() {
